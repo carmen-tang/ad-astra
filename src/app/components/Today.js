@@ -17,7 +17,6 @@ export default function Today() {
 					<h1 className="font-regular text-stone-800 text-xl">Today's Plan</h1>
 					<p>June 14th, 2022</p>
 				</div>
-				<PlusButton size="lg" />
 			</header>
 			<div className="grid gap-8">
 				<Appointments />

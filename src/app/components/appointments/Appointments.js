@@ -10,17 +10,17 @@ export default function Appointments() {
   const [posts, setPosts] = useState([
     {
       id: getRandId(),
-      title: "Post Title",
+      title: "Meeting with Galileo Galilei",
       author: "Author",
       posted: getDate(),
-      body: "Placeholder content."
+      body: "Discuss the stars and physics with Galileo"
     },
     {
       id: getRandId(),
-      title: "Post Title",
+      title: "Finish Collection Reports",
       author: "Author",
       posted: getDate(),
-      body: "Placeholder content."
+      body: "Review reports from clients and turn in final report to Neils Bohr"
     }
   ]);
   const [isTransitioning, setTransition] = useState(false);
@@ -37,12 +37,12 @@ export default function Appointments() {
   return (
     <div id="appointments">
       <Feed>
-        <PostSubmit addPost={addPost} />
         <PostCollection
           posts={posts}
           removePost={removePost}
           isTransitioning={isTransitioning}
         />
+        <PostSubmit addPost={addPost} />
       </Feed>
     </div>
   );

@@ -27,3 +27,15 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
+
+.modal {
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 400px;
+}
+
+.bg-black-40 {
+  background-color: rgba(0, 0, 0, 0.4);
+}

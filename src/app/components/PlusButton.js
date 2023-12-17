@@ -10,7 +10,7 @@ export default function PlusButton({ size = "md" }) {
 	};
 	return (
 		<button
-			className={`bg-stone-800 rounded-full text-white hover:bg-stone-700 ${padding[size]}`}
+			className={`bg-stone-800 rounded-full text-white hover:bg-[#0f1e42] ${padding[size]}`}
 			type="button"
 			aria-label="Add item"
 		>
