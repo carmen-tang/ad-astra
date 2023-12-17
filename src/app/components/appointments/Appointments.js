@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import PostSubmit from './PostSubmit'
 import PostCollection from './PostCollection'
 import Feed from './Feed'
+import { getDate, getRandId } from '../../helpers';
 
 export default function Appointments() {
   const [posts, setPosts] = useState([
@@ -32,24 +33,6 @@ export default function Appointments() {
     const filteredPosts = posts.filter((post) => post.id !== id);
     setPosts(filteredPosts);
   }
-
-  function getDate() {
-    const day = new Date().getDate();
-    const month = new Date().getMonth() + 1;
-    const year = new Date().getFullYear();
-  
-    return `${day}.${month}.${year}`;
-  }
-  
-  function getRandId() {
-    return Math.floor(Math.random() * (100000 - 1) + 1);
-  }
-
-  /*
-  function isTransitioning(transitionType) {
-    transition ? transition : null;
-  }
-  */
 
   return (
     <div id="appointments">

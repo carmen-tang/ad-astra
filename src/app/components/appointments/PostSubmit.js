@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react'
+import { getDate, getRandId } from '../../helpers';
 
 export default function PostSubmit(props) {
   const [post, setPost] = useState({
@@ -8,18 +9,6 @@ export default function PostSubmit(props) {
     author: "",
     body: ""
   });
-
-  function getRandId() {
-    return Math.floor(Math.random() * (100000 - 1) + 1);
-  }
-
-  function getDate() {
-    const day = new Date().getDate();
-    const month = new Date().getMonth() + 1;
-    const year = new Date().getFullYear();
-  
-    return `${day}.${month}.${year}`;
-  }
 
   function addPostHandler(event) {
     event.preventDefault();
