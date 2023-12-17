@@ -11,14 +11,14 @@ export default function Appointments() {
     {
       id: getRandId(),
       title: "Meeting with Galileo Galilei",
-      author: "Author",
+      author: "Carmen Tang",
       posted: getDate(),
       body: "Discuss the stars and physics with Galileo"
     },
     {
       id: getRandId(),
       title: "Finish Collection Reports",
-      author: "Author",
+      author: "Carmen Tang",
       posted: getDate(),
       body: "Review reports from clients and turn in final report to Neils Bohr"
     }

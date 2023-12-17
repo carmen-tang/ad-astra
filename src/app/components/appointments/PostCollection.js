@@ -21,10 +21,10 @@ export default function PostCollection(props) {
           props.posts.map((post) => {
             return (
               <article key={post.id} className="post bg-white p-6 mb-4 shadow rounded">
-                <h2 className="post__title">{post.title}</h2>
-                <h3 className="post__author text-muted">{post.author}</h3>
-                <span className="post__date text-muted">{post.posted}</span>
-                <div className="post__body">{post.body}</div>
+                <h2 className="post-title font-bold text-lg text-[#0e5f59]">{post.title}</h2>
+                <h3 className="post-author">{post.author}</h3>
+                <span className="post-date text-sm">{post.posted}</span>
+                <div className="post-body text-sm">{post.body}</div>
                 <div className="w-full flex justify-end">
                   <button
                     onClick={() => removePostHandler(post.id)}
