@@ -148,7 +148,7 @@ function Sidebar() {
 										{submenu.map(({ label, url, color }) => (
 											<li key={label}>
 												<a
-													className="flex items-center gap-3 px-3 py-2 hover:bg-black/10"
+													className="flex items-center gap-3 px-3 py-2 hover:bg-[#88bea3] hover:text-white rounded-2xl"
 													href={url}
 												>
 													<span className={`block w-2 h-2 rounded-sm ${color}`}></span>
@@ -160,7 +160,7 @@ function Sidebar() {
 								</Collapsible>
 							) : (
 								<a
-									className="font-bold p-2 hover:bg-black/10 flex gap-3 text-stone-700"
+									className="font-bold p-2 hover:bg-[#88bea3] hover:text-white rounded-2xl flex gap-3 text-stone-700"
 									href={url}
 								>
 									{icon}

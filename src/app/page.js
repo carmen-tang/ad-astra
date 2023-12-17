@@ -16,7 +16,7 @@ function Home() {
             <Profile />
           </div>
         </div>
-        <footer className="text-sm p-12 text-center text-white bg-[#88bea3">
+        <footer className="text-sm p-12 text-center text-white bg-[#88bea3]">
           Made with 💜 by Carmen Tang
         </footer>
       </div>
