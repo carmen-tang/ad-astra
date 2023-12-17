@@ -6,6 +6,7 @@ import Collapsible from './Collapsible'
 import LogOutButton from './LogOutButton'
 import CloseMenuButton from './CloseMenuButton'
 import MenuButton from './MenuButton'
+import Image from 'next/image'
 
 const links = [
 	{
@@ -124,7 +125,13 @@ function Sidebar() {
 					open ? "max-sm:translate-x-0" : "max-sm:-translate-x-full"
 				}`}
 			>
-				{/* <Logo /> */}
+				<Image
+					src="/logo.png"
+					width={150}
+					height={150}
+					alt="As Astra"
+					className="rounded-full mx-auto"
+				/>
 				<ul className="grid gap-2">
 					{links.map(({ label, url, icon, submenu }) => (
 						<li key={label}>

@@ -1,4 +1,4 @@
-function Logo() {
+export default function Logo() {
 	return (
 		<svg
 			className="flex-shrink-0"
