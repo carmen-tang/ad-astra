@@ -6,13 +6,9 @@ import PlusButton from './../PlusButton'
 import { createClient } from "@supabase/supabase-js";
 
 export default function PostSubmit(props) {
-  const [post, setPost] = useState({
-    title: "",
-    author: "",
-    body: ""
-  });
-
   const [isOpen, setIsOpen] = useState(false);
+
+  const { post, setPost, clearInputs } = props;
 
   const supabase = createClient('https://mvjhqesqlltxrfcvispp.supabase.co', process.env.API_KEY);
 
@@ -54,14 +50,6 @@ export default function PostSubmit(props) {
     postAppointments(event);
 
     clearInputs();
-  }
-
-  function clearInputs() {
-    setPost({
-      title: "",
-      author: "",
-      body: ""
-    });
   }
 
   return (

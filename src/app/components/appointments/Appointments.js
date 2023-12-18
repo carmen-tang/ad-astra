@@ -7,42 +7,41 @@ import Feed from './Feed'
 import { getDate, getRandId } from '../../helpers';
 
 export default function Appointments() {
-  const [posts, setPosts] = useState([
-    {
-      id: getRandId(),
-      title: "Meeting with Galileo Galilei",
-      author: "Carmen Tang",
-      posted: getDate(),
-      body: "Discuss the stars and physics with Galileo"
-    },
-    {
-      id: getRandId(),
-      title: "Finish Collection Reports",
-      author: "Carmen Tang",
-      posted: getDate(),
-      body: "Review reports from clients and turn in final report to Neils Bohr"
-    }
-  ]);
-  const [isTransitioning, setTransition] = useState(false);
+  const [post, setPost] = useState({
+    title: "",
+    author: "",
+    body: ""
+  });
+
+  const [key, setKey] = useState(false);
 
   function addPost(post) {
-    setPosts([...posts, post]);
+    setPost(post);
+    clearInputs();
   }
 
   function removePost(id) {
-    const filteredPosts = posts.filter((post) => post.id !== id);
-    setPosts(filteredPosts);
+    const filteredPosts = post.filter((post) => post.id !== id);
+    setPost(filteredPosts);
+  }
+
+  function clearInputs() {
+    setPost({
+      title: "",
+      author: "",
+      body: ""
+    });
+    setKey(JSON.stringify(post));
   }
 
   return (
-    <div id="appointments">
+    <div id="appointments" key={key}>
       <Feed>
         <PostCollection
-          posts={posts}
+          posts={post}
           removePost={removePost}
-          isTransitioning={isTransitioning}
         />
-        <PostSubmit addPost={addPost} />
+        <PostSubmit addPost={addPost} clearInputs={clearInputs} post={post} setPost={setPost} />
       </Feed>
     </div>
   );

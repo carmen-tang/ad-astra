@@ -8,11 +8,11 @@ export default function PostCollection(props) {
 
   const supabase = createClient('https://mvjhqesqlltxrfcvispp.supabase.co', process.env.API_KEY);
 
-  if (!supabase) {
-    console.error('Failed to initialize Supabase client');
-  } else {
-    console.log('Supabase client initialized successfully');
-  }
+  // if (!supabase) {
+  //   console.error('Failed to initialize Supabase client');
+  // } else {
+  //   console.log('Supabase client initialized successfully');
+  // }
 
   function removePostHandler(id) {
     props.removePost(id);
