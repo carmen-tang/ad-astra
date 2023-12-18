@@ -6,8 +6,6 @@ import { createClient } from "@supabase/supabase-js";
 export default function PostCollection(props) {
   const [appointments, setAppointments] = useState([]);
 
-  console.log("Supabase API Key:",  process.env.API_KEY);
-
   const supabase = createClient('https://mvjhqesqlltxrfcvispp.supabase.co', process.env.API_KEY);
 
   if (!supabase) {
@@ -49,7 +47,7 @@ export default function PostCollection(props) {
               <article key={post.id} className="post bg-white p-6 mb-4 shadow rounded">
                 <h2 className="post-title font-bold text-lg text-[#0e5f59]">{post.title}</h2>
                 <h3 className="post-author">{post.author}</h3>
-                <span className="post-date text-sm">{post.posted}</span>
+                <span className="post-date text-sm">{post.date}</span>
                 <div className="post-body text-sm">{post.body}</div>
                 <div className="w-full flex justify-end">
                   <button
