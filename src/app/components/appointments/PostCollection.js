@@ -4,12 +4,11 @@ import React, { useState, useEffect } from 'react';
 import { createClient } from "@supabase/supabase-js";
 
 export default function PostCollection(props) {
-  const [isOpen, setIsOpen] = useState(false);
   const [appointments, setAppointments] = useState([]);
 
   console.log("Supabase API Key:",  process.env.API_KEY);
 
-  const supabase = createClient(process.env.HOST, process.env.API_KEY);
+  const supabase = createClient('https://mvjhqesqlltxrfcvispp.supabase.co', process.env.API_KEY);
 
   if (!supabase) {
     console.error('Failed to initialize Supabase client');
@@ -23,35 +22,29 @@ export default function PostCollection(props) {
 
   useEffect(() => {
     getAppointments();
-    console.log('here')
   }, []);
 
   async function getAppointments() {
     try {
-      const { data, error } = await supabase.from("appointments").select();
-      console.log("Appointments fetched successfully:", data);
-      if (error) {
-        throw error;
+      const { data } = await supabase.from("appointments").select();
+
+      if (data && data.length > 0) {
+        console.log("Appointments fetched successfully:", data);
+        setAppointments(data);
+      } else {
+        console.log("No appointments found.");
       }
-      setAppointments(data);
-      console.log("Appointments fetched successfully:", data);
+
     } catch (error) {
       console.error("Error fetching appointments:", error.message);
     }
   }
 
-  console.log(appointments);
-
-
   return (
     <section id="post-collection">
       {/* posts */}
       <div id="posts-container">
-        {appointments.map((appointment) => (
-          <li key={appointment.id}>{appointment.id}</li>
-        ))}
-        {props.posts &&
-          props.posts.map((post) => {
+        {appointments && appointments.map((post) => {
             return (
               <article key={post.id} className="post bg-white p-6 mb-4 shadow rounded">
                 <h2 className="post-title font-bold text-lg text-[#0e5f59]">{post.title}</h2>
