@@ -4,7 +4,7 @@ import { Chart as ChartJS } from 'chart.js/auto';
 
 export default function ChartVisualization() {
 	return (
-		<div class="w-full max-w-[360px]">
+		<div className="w-full max-w-[360px]">
       <Bar
         data={{
           labels: ["January", "February", "March", "April", "May"],

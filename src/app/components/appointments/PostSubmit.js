@@ -76,10 +76,10 @@ export default function PostSubmit(props) {
             </button>
             <div className="absolute left-0 top-0 w-full h-full overflow-auto">
               <div className="pt-8 px-4">
-                <form class="block bg-white p-4">
-                  <h3 class="text-xl mb-4">Add a New Appointment</h3>
+                <form className="block bg-white p-4">
+                  <h3 className="text-xl mb-4">Add a New Appointment</h3>
 
-                  <div class="relative z-0 w-full mb-5">
+                  <div className="relative z-0 w-full mb-5">
                     <input type="text" name="cc" placeholder=" " className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#0e2242] border-gray-200 font-sans"
                       onChange={(event) =>
                         setPost({ ...post, title: event.target.value })
@@ -87,10 +87,10 @@ export default function PostSubmit(props) {
                       value={post.title}
                       type="text"
                       id="title" />
-                    <label htmlFor="cc" class="absolute duration-200 top-3 -z-1 origin-0 text-gray-500 text-base">Title</label>
+                    <label htmlFor="cc" className="absolute duration-200 top-3 -z-1 origin-0 text-gray-500 text-base">Title</label>
                   </div>
 
-                  <div class="relative z-0 w-full mb-5">
+                  <div className="relative z-0 w-full mb-5">
                     <input type="text" name="cc" placeholder=" " className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#0e2242] border-gray-200 font-sans"
                       onChange={(event) =>
                         setPost({ ...post, author: event.target.value })
@@ -98,19 +98,19 @@ export default function PostSubmit(props) {
                       value={post.author}
                       type="text"
                       />
-                    <label htmlFor="cc" class="absolute duration-200 top-3 -z-1 origin-0 text-gray-500 text-base">Author</label>
+                    <label htmlFor="cc" className="absolute duration-200 top-3 -z-1 origin-0 text-gray-500 text-base">Author</label>
                   </div>
 
-                  <div class="relative z-0 w-full mb-5">
+                  <div className="relative z-0 w-full mb-5">
                     <input type="textarea" name="cc" placeholder=" " className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#0e2242] border-gray-200 font-sans"
                       onChange={(event) => setPost({ ...post, body: event.target.value })}
                       value={post.body}
                     />
-                    <label htmlFor="cc" class="absolute duration-200 top-3 -z-1 origin-0 text-gray-500 text-base">Notes</label>
+                    <label htmlFor="cc" className="absolute duration-200 top-3 -z-1 origin-0 text-gray-500 text-base">Notes</label>
                   </div>
 
                   <button
-                    className="rounded-lg bg-[#0e2242] hover:bg-[#89bfa3] mt-8 block text-center text-white px-4 py-2 text-sm font-bold"
+                    className="bg-[#0e2242] hover:bg-[#89bfa3] mt-8 block text-center text-white px-4 py-2 text-sm font-bold"
                     onClick={() => addPostHandler(event)}
                     type="submit">Submit</button>
                 </form>
