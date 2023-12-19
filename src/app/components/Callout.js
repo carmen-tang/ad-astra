@@ -2,7 +2,7 @@ export default function Callout({ heading, subheading, linkText, url, variant = 
 	const variants = [
 		{
 			class:
-				"lg:col-span-2 lg:grid-cols-2 bg-gradient-to-br from-[#176B87] to-[#64CCC5]",
+				"lg:col-span-2 lg:grid-cols-1 bg-gradient-to-br from-[#176B87] to-[#64CCC5]",
 		},
 		{
 			class: "bg-gradient-to-br from-[#64CCC5] to-[#DAFFFB]",
@@ -18,7 +18,7 @@ export default function Callout({ heading, subheading, linkText, url, variant = 
 				<p className="text-stone-800 font-light">{subheading}</p>
 				{url && (
 					<a
-						className="self-start mt-6 lg:mt-auto px-4 py-2 text-xs font-bold tracking-wide text-stone-800 uppercase hover:text-stone-900"
+						className="self-start p-2 text-xs font-bold tracking-wide text-stone-800 uppercase hover:text-stone-900 bg-white mt-10"
 						href={url}
 					>
 						{linkText}
