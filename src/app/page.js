@@ -17,7 +17,7 @@ function Home() {
           </div>
         </div>
         <footer className="text-sm p-12 text-center text-black">
-          Made with 💜 by Carmen Tang
+          {/* Made with 💜 by Carmen Tang */}
         </footer>
       </div>
     </main>
