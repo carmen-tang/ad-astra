@@ -11,52 +11,16 @@ import VirusIcon from './../assets/VirusIcon'
 import BacteriaIcon from './../assets/BacteriaIcon'
 import MicroscopeIcon from './../assets/MicroscopeIcon'
 import DNAIcon from './../assets/DNAIcon'
+import Journals from './Journals'
 
 export default function Pinned() {
 	return (
 		<section className="grid gap-8 p-8 lg:p-10">
-			<div className="flex items-center justify-between">
-				<h2 className="font-regular text-stone-800 text-xl">Monthly pinned</h2>
+			<div className="flex items-start justify-between">
+				<h2 className="font-regular text-stone-800 text-xl">Recent Published Journals</h2>
 				<a href="#view-all">View all</a>
 			</div>
-			<ul className="grid gap-4">
-				<li>
-					<TaskCard
-						subheading={"Next-gen immuno"}
-						heading={"Multispecfic liquids analysis"}
-						due={"5d"}
-						status={
-							<>
-								<NumberIcon number={1} /> New feedback
-							</>
-						}
-					/>
-				</li>
-				<li>
-					<TaskCard
-						subheading={"Harmony"}
-						heading={"Protein characterization during childhood and pregnancy"}
-						due={"1h"}
-						status={
-							<>
-								<AlertIcon /> Deadline is today
-							</>
-						}
-					/>
-				</li>
-				<li>
-					<TaskCard
-						subheading={"Pharmaceutical"}
-						heading={"Quick element dissolution testing"}
-						due={"7h"}
-						status={
-							<>
-								<CheckIcon /> Accepted
-							</>
-						}
-					/>
-				</li>
-			</ul>
+			<Journals />
 			<div>
 				<div className="flex items-center justify-between">
 					<h2 className="font-regular text-stone-800 text-xl">My learnings</h2>

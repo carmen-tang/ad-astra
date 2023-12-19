@@ -3,7 +3,7 @@ export default function TaskCard({ heading, subheading, status, due }) {
 		<div className="border border-stone-300 px-6 py-5">
 			<div className="flex justify-between gap-4 mb-2">
 				<p>{subheading}</p>
-				<time>{due}</time>
+				{/* <time>{due}</time> */}
 			</div>
 			<h3 className="text-stone-800 font-bold">{heading}</h3>
 			{status && (
