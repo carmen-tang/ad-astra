@@ -19,7 +19,8 @@ export default function ChartVisualization() {
         height={300}
         width={500}
         options={{
-          maintainAspectRatio: true
+          maintainAspectRatio: true,
+          responsive: true
         }}
       />
     </div>

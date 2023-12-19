@@ -22,16 +22,16 @@ export default function Today() {
 				<Appointments />
 				<div className="grid gap-6">
 					<Callout
-						heading="Weekly Report"
-						subheading="Track your performance"
+						heading="Monthly Report"
+						subheading="Ready to view"
 						linkText="View report"
 						url="#report"
 						variant={1}
 					/>
 					<Callout
-						heading="Study 78X"
+						heading="Research Links"
 						subheading={
-							<span className="flex items-center gap-2">
+							<span className="flex items-center gap-2 text-xs">
 								<ClockIcon /> In progress
 							</span>
 						}
@@ -40,7 +40,7 @@ export default function Today() {
 					<Callout
 						heading="Analyses"
 						subheading={
-							<span className="flex items-center gap-2">
+							<span className="flex items-center gap-2 text-xs">
 								<CheckIcon /> Completed
 							</span>
 						}
