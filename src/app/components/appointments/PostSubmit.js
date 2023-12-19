@@ -8,7 +8,7 @@ import { createClient } from "@supabase/supabase-js";
 export default function PostSubmit(props) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { post, setPost, clearInputs } = props;
+  const { post, setPost, clearInputs, addPost } = props;
 
   const supabase = createClient('https://mvjhqesqlltxrfcvispp.supabase.co', process.env.API_KEY);
 
@@ -29,6 +29,8 @@ export default function PostSubmit(props) {
       date: getDate(),
       body
     })
+
+    addPost();
   }
 
   function addPostHandler(event) {
@@ -46,7 +48,11 @@ export default function PostSubmit(props) {
       body
     };
 
-    props.addPost(newPost);
+    addPost({
+      post: newPost,
+      id: newPost.id
+    });
+
     postAppointments(event);
 
     clearInputs();
