@@ -8,7 +8,7 @@ export default function Collapsible({ trigger, children }) {
 	return (
 		<div>
 			<button
-				className="font-bold p-2 hover:bg-black/10 flex w-full gap-3 text-stone-700"
+				className="font-bold px-6 py-4 hover:bg-[#88bea3] hover:text-white flex w-full gap-3 text-stone-700"
 				onClick={() => setOpen((prev) => !prev)}
 				type="button"
 			>

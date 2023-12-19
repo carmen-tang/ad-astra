@@ -16,7 +16,7 @@ import ChartVisualization from './ChartVisualization'
 
 export default function Pinned() {
 	return (
-		<section className="grid gap-8 p-8 lg:p-10">
+		<section className="grid gap-8 p-8 lg:p-10 max-w-[600px] w-full">
 			<div className="flex items-start justify-between">
 				<h2 className="font-regular text-stone-800 text-xl">Recent Published Journals</h2>
 				<a href="#view-all">View all</a>

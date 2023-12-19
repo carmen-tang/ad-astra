@@ -121,7 +121,7 @@ function Sidebar() {
 				aria-label="Close menu"
 			></button>
 			<aside
-				className={`max-sm:fixed bg-[#ecf8ff] inset-0 end-auto flex flex-col gap-10 p-6 pr-8 max-sm:transition-transform z-10 overflow-auto sm:sticky sm:top-3 sm:max-h-[calc(100vh-1.5rem)] ${
+				className={`max-sm:fixed bg-[#ecf8ff] inset-0 end-auto flex flex-col gap-10 max-sm:transition-transform z-10 overflow-auto sm:sticky sm:top-3 sm:max-h-[calc(100vh-1.5rem)] ${
 					open ? "max-sm:translate-x-0" : "max-sm:-translate-x-full"
 				}`}
 			>
@@ -130,28 +130,27 @@ function Sidebar() {
 					width={150}
 					height={150}
 					alt="As Astra"
-					className="rounded-full mx-auto"
+					className="rounded-full mx-auto mt-8"
 				/>
-				<ul className="grid gap-2">
+				<ul className="grid gap-2 w-[280px]">
 					{links.map(({ label, url, icon, submenu }) => (
 						<li key={label}>
 							{submenu ? (
 								<Collapsible
 									trigger={
 										<>
-											{icon}
 											{label}
 										</>
 									}
 								>
-									<ul className="ml-8">
+									<ul className="">
 										{submenu.map(({ label, url, color }) => (
 											<li key={label}>
 												<a
-													className="flex items-center gap-3 px-3 py-2 hover:bg-[#88bea3] hover:text-white rounded-2xl"
+													className="flex items-center gap-3 px-6 py-2 hover:bg-[#88bea3] hover:text-white p-4"
 													href={url}
 												>
-													<span className={`block w-2 h-2 rounded-sm ${color}`}></span>
+													{/* <span className={`block w-2 h-2 rounded-sm ${color}`}></span> */}
 													{label}
 												</a>
 											</li>
@@ -160,17 +159,16 @@ function Sidebar() {
 								</Collapsible>
 							) : (
 								<a
-									className="font-bold p-2 hover:bg-[#88bea3] hover:text-white rounded-2xl flex gap-3 text-stone-700"
+									className="font-bold p-2 hover:bg-[#88bea3] hover:text-white px-6 py-4 flex gap-3 text-stone-700"
 									href={url}
 								>
-									{icon}
 									{label}
 								</a>
 							)}
 						</li>
 					))}
 				</ul>
-				<div className="mt-auto grid grid-cols-2 items-center">
+				<div className="mt-auto grid grid-cols-2 items-center px-6 py-4">
 					<LogOutButton />
 					<CloseMenuButton onClick={() => setOpen(false)} />
 				</div>
