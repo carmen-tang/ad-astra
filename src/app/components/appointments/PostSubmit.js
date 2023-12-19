@@ -76,38 +76,43 @@ export default function PostSubmit(props) {
             </button>
             <div className="absolute left-0 top-0 w-full h-full overflow-auto">
               <div className="pt-8 px-4">
-                <h2 className="text-xl font-semibold">Modal Info</h2>
-                <p className="text-base">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatuorum.</p>
-                <form className="post-form">
-                  <input
-                    onChange={(event) =>
-                      setPost({ ...post, title: event.target.value })
-                    }
-                    value={post.title}
-                    type="text"
-                    placeholder="Title"
-                    id="title"
-                  />
-                  <input
-                    onChange={(event) =>
-                      setPost({ ...post, author: event.target.value })
-                    }
-                    value={post.author}
-                    type="text"
-                    placeholder="Author"
-                  />
-                  <textarea
-                    onChange={(event) => setPost({ ...post, body: event.target.value })}
-                    value={post.body}
-                    placeholder="Start typing..."
-                  ></textarea>
+                <form class="block bg-white p-4">
+                  <h3 class="text-xl mb-4">Add a New Appointment</h3>
+
+                  <div class="relative z-0 w-full mb-5">
+                    <input type="text" name="cc" placeholder=" " className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#0e2242] border-gray-200 font-sans"
+                      onChange={(event) =>
+                        setPost({ ...post, title: event.target.value })
+                      }
+                      value={post.title}
+                      type="text"
+                      id="title" />
+                    <label htmlFor="cc" class="absolute duration-200 top-3 -z-1 origin-0 text-gray-500 text-base">Title</label>
+                  </div>
+
+                  <div class="relative z-0 w-full mb-5">
+                    <input type="text" name="cc" placeholder=" " className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#0e2242] border-gray-200 font-sans"
+                      onChange={(event) =>
+                        setPost({ ...post, author: event.target.value })
+                      }
+                      value={post.author}
+                      type="text"
+                      />
+                    <label htmlFor="cc" class="absolute duration-200 top-3 -z-1 origin-0 text-gray-500 text-base">Author</label>
+                  </div>
+
+                  <div class="relative z-0 w-full mb-5">
+                    <input type="textarea" name="cc" placeholder=" " className="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-[#0e2242] border-gray-200 font-sans"
+                      onChange={(event) => setPost({ ...post, body: event.target.value })}
+                      value={post.body}
+                    />
+                    <label htmlFor="cc" class="absolute duration-200 top-3 -z-1 origin-0 text-gray-500 text-base">Notes</label>
+                  </div>
+
                   <button
+                    className="rounded-lg bg-[#0e2242] hover:bg-[#89bfa3] mt-8 block text-center text-white px-4 py-2 text-sm font-bold"
                     onClick={() => addPostHandler(event)}
-                    className="btn btn--primary"
-                    type="submit"
-                  >
-                    + Add
-                  </button>
+                    type="submit">Submit</button>
                 </form>
               </div>
             </div>
